@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MealPicker｜今天吃什麼？</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="app">
+<header><div><small>MEALPICKER</small><h1>今天吃什麼？</h1><p>依照位置、距離與營業時間，找出現在適合你的餐廳。</p></div><div class="logo">🍜</div></header>
+
+<section class="card">
+<h2>📍 目前位置</h2>
+<div class="row"><p id="locationStatus">尚未取得位置</p><button id="locationBtn">取得我的位置</button></div>
+<div class="hint">首次使用需要允許瀏覽器取得位置。若直接開啟 HTML 時瀏覽器限制定位，可使用「展示位置」測試完整作品。</div>
+<div class="demo"><select id="demoLocation"><option value="taichung">台中市區（展示位置）</option><option value="taipei">台北市區（展示位置）</option></select><button id="demoBtn" class="light">使用展示位置</button></div>
+</section>
+
+<section class="card">
+<h2>設定搜尋條件</h2><p class="muted">修改條件後，結果會立即更新。</p>
+<div class="filters">
+<label>餐廳類型<select id="type"><option value="all">不限類型</option><option>火鍋</option><option>日式</option><option>韓式</option><option>燒肉</option><option>速食</option></select></label>
+<label>最大搜尋距離<select id="distance"><option value="1">1 公里</option><option value="3">3 公里</option><option value="5" selected>5 公里</option><option value="10">10 公里</option></select></label>
+<label>排序方式<select id="sort"><option value="rating">評分最高</option><option value="distance">距離最近</option></select></label>
+</div>
+<div class="row action"><button id="pick">🍽️ 幫我決定</button><span id="summary">請先取得位置</span></div>
+</section>
+
+<section class="results">
+<div class="row"><div><h2>推薦結果</h2><p id="count" class="muted">尚未搜尋</p></div><span id="clock"></span></div>
+<div id="list"></div>
+<div id="empty" class="card empty"><div>🍴</div><h3>準備好決定今天吃什麼了嗎？</h3><p>先取得位置，再設定條件並按下「幫我決定」。</p></div>
+</section>
+<footer>MealPicker｜今天吃什麼？　・　純前端展示作品</footer>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
